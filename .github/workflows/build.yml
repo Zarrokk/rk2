@@ -1,4 +1,4 @@
-name: Actions_for_tests
+name: Actions
 
 on:
  push:
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs: 
- build_Linux:
+ building:
 
   runs-on: ubuntu-latest
 
@@ -31,5 +31,5 @@ jobs:
   - name: Run tests
     run: build/check
   
-  - name: run program
+  - name: Run program
     run: build/program

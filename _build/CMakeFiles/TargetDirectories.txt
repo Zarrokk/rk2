@@ -1,5 +1,7 @@
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/program.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/check.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/package.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/package_source.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/test.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/edit_cache.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/rebuild_cache.dir
@@ -7,6 +9,8 @@
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/install.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/install/local.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/CMakeFiles/install/strip.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/package.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/package_source.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/test.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/edit_cache.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/rebuild_cache.dir
@@ -16,6 +20,8 @@
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/CMakeFiles/install/strip.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/gmock.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/gmock_main.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/package.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/package_source.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/test.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/edit_cache.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/rebuild_cache.dir
@@ -25,6 +31,8 @@
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googlemock/CMakeFiles/install/strip.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/gtest.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/gtest_main.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/package.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/package_source.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/test.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/edit_cache.dir
 /home/zarok/projects/tp_labs/tp_projects/rk2/_build/third-party/gtest/googletest/CMakeFiles/rebuild_cache.dir

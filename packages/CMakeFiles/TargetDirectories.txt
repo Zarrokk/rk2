@@ -1,0 +1,5 @@
+/home/zarok/projects/tp_labs/tp_projects/rk2/packages/CMakeFiles/program.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/packages/CMakeFiles/package.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/packages/CMakeFiles/package_source.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/packages/CMakeFiles/edit_cache.dir
+/home/zarok/projects/tp_labs/tp_projects/rk2/packages/CMakeFiles/rebuild_cache.dir

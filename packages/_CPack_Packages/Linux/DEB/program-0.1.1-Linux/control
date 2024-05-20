@@ -1,0 +1,10 @@
+Architecture: all
+Description: C++ prototype dev design pattern
+ Program dev design pattern
+Maintainer: zarok
+Package: commandpattern-dev
+Priority: optional
+Section: devel
+Version: 0.1.1-1
+Installed-Size: 4
+

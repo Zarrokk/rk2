@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.22)
 option(BUILD_TESTS "Build tests" OFF)
 option(PACK "pack" OFF)
 project(program)
-
+set(CPACK_GENERATOR "DEB")
 file(GLOB SOURCES "ConceptualExample01.cpp" , "ConceptualExample02.cpp" , "Program.cpp", "Chess.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
@@ -23,3 +23,5 @@ if(BUILD_TESTS)
   target_link_libraries(check gtest_main)
   add_test(NAME check COMMAND check)
 endif()
+
+include (CPack.cmake)
