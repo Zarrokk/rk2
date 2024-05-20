@@ -1,33 +1,25 @@
-name: Build and Test
-
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+name: Actions
+run-name: ${{ github.actor }} is running Program
+on: [push]
 
 jobs:
-  build:
+  prototype_cont:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: Set up CMake
-      uses: actions/setup-cmake@v1
-      with:
-        cmake-version: '3.22'  
+    - name: Adding gtest
+      run: git clone https://github.com/google/googletest.git third-party/gtest -b release-1.11.0
 
-    - name: Configure and build
-      run: |
-        mkdir build
-        cd build
-        cmake -DBUILD_TESTS=ON ..
-        cmake --build .
+    - name: Config with tests
+      run: cmake -B ${{github.workspace}}/.build -DBUILD_TESTS=ON
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/.build
+
+    - name: Run programm.cpp
+      run: ${{github.workspace}}/.build/program
 
     - name: Run tests
-      run: |
-        cd build
-        ctest --output-on-failure
+      run: ${{github.workspace}}/.build/check
