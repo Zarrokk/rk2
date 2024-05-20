@@ -1,56 +1,53 @@
-name: CPack
+name: Actions
+
 on:
-  push:
-    branches: [master]
-    tags:
-      - "v*.*.*"
-  pull_request:
-    branches: [master]
-    tags:
-      - "v*.*.*"
-        
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Install CMake
-        run: sudo apt-get install -y cmake
-      - name: Config ConceptualExample
-        run: cmake ${{github.workspace}} -B ${{github.workspace}}/build -D PRINT_VERSION=1.0.0
-      - name: Build ConceptualExample
-        run: cmake --build ${{github.workspace}}/build
-      - name: Build package
-        run: cmake --build ${{github.workspace}}/build --target package
-      - name: Package with CPack
-        run: |
-          cd build
-          cpack
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: package
-          path: ${{github.workspace}}/build/*.deb
-  create_tag_and_release:
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: package
-          path: ./
-      - name: Make a release
-        uses: ncipollo/release-action@v1.11.0
-        with:
-          tag: v1.1.1
-          artifacts: "build/*.deb,build/*.tar.gz,build/*.zip"
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: example
-          path: build/example
+ push:
+  branches: [master]
+  tags:
+     - '*'
+ pull_request:
+  branches: [master]
+
+permissions:
+  contents: write
+
+jobs: 
+ building:
+
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions/checkout@v3
+
+  - name: Adding gtest
+    run: git clone https://github.com/google/googletest.git third-party/gtest -b release-1.11.0
+
+  - name: Config
+    run: cmake -H. -B ${{github.workspace}}/build -DBUILD_TESTS=ON
+
+  - name: Build
+    run: cmake --build ${{github.workspace}}/build
+
+  - name: Run tests
+    run: build/check
+  
+  - name: Run program
+    run: build/program
+
+  - name: Build package
+    run: cmake --build ${{github.workspace}}/build --target package
+
+  - name: Build source package
+    run: cmake --build ${{github.workspace}}/build --target package_source
+
+  - name: Make a release
+    uses: ncipollo/release-action@v1.11.0
+    with:
+     tag: v1.0.4
+     artifacts: "packages/*.deb,packages/*.tar.gz,packages/*.zip"
+     token: ${{ secrets.GITHUB_TOKEN }}
+  - name: Artifacts
+    uses: actions/upload-artifact@v4
+    with:
+     name: example
+     path: packages/example
