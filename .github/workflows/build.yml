@@ -43,7 +43,7 @@ jobs:
   - name: Make a release
     uses: ncipollo/release-action@v1.11.0
     with:
-     tag: v1.0.3
+     tag: v1.0.4
      artifacts: "packages/*.deb,packages/*.tar.gz,packages/*.zip"
      token: ${{ secrets.GITHUB_TOKEN }}
   - name: Artifacts
