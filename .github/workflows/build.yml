@@ -1,28 +1,35 @@
-name: Actions
-run-name: ${{ github.actor }} is running Program
-on: [push]
+name: Actions_for_tests
 
-jobs:
-  prototype_cont:
-    runs-on: ubuntu-latest
+on:
+ push:
+  branches: [master]
+  tags:
+     - '*'
+ pull_request:
+  branches: [master]
 
-    steps:
-    - uses: actions/checkout@v4
+permissions:
+  contents: write
 
-    - name: Adding gtest
-      run: git clone https://github.com/google/googletest.git third-party/gtest -b release-1.11.0
+jobs: 
+ build_Linux:
 
-    - name: Print workspace directory
-      run: echo ${{github.workspace}}
+  runs-on: ubuntu-latest
 
-    - name: Config with tests
-      run:  cmake -H. -B ${{github.workspace}}/.build -DBUILD_TESTS=ON
+  steps:
+  - uses: actions/checkout@v3
 
-    - name: Build
-      run: cmake -B ${{github.workspace}}/.build -S ${{github.workspace}} -DBUILD_TESTS=ON
+  - name: Adding gtest
+    run: git clone https://github.com/google/googletest.git third-party/gtest -b release-1.11.0
 
-    - name: Run programm.cpp
-      run: ${{github.workspace}}/.build/program
+  - name: Config
+    run: cmake -H. -B ${{github.workspace}}/build -DBUILD_TESTS=ON
 
-    - name: Run tests
-      run: ${{github.workspace}}/.build/check
+  - name: Build
+    run: cmake --build ${{github.workspace}}/build
+
+  - name: Run tests
+    run: build/check
+  
+  - name: run program
+    run: build/program
