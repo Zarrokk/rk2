@@ -1,0 +1,33 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up CMake
+      uses: actions/setup-cmake@v1
+      with:
+        cmake-version: '3.22'  
+
+    - name: Configure and build
+      run: |
+        mkdir build
+        cd build
+        cmake -DBUILD_TESTS=ON ..
+        cmake --build .
+
+    - name: Run tests
+      run: |
+        cd build
+        ctest --output-on-failure
