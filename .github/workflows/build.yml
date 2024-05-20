@@ -16,7 +16,7 @@ jobs:
       run: echo ${{github.workspace}}
 
     - name: Config with tests
-      run:  cmake -H. -B ${{github.workspace}}/build -DBUILD_TESTS=ON
+      run:  cmake -H. -B ${{github.workspace}}/.build -DBUILD_TESTS=ON
 
     - name: Build
       run: cmake -B ${{github.workspace}}/.build -S ${{github.workspace}} -DBUILD_TESTS=ON
